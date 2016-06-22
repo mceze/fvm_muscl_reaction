@@ -1,0 +1,42 @@
+#Inputs for finite volume calculation
+MeshFile = wall.neu
+nInitStates = 2
+Chemistry = True
+RefState = 1
+###############################
+Chemistry Block
+nChemSpecies = 3
+Molar Weight
+1.0 1.0 1.5
+Heat Of Formation
+0.0 0.0 -60.0
+Arrhenius Parameters
+1.0 1.0 5.0
+1.0 1.0 15.0
+Stoichimetric Coefficients
+1.0 0.5 1.0
+###############################
+InitState Block 1
+Type = Primitive
+1.0 0.0 0.0 1.0 0.01 0.98 0.01
+nEGroups = 1
+EGroups = 2
+###############################
+InitState Block 2
+Type = Primitive
+1.3416 0.36154 0.0 1.5133 0.98 0.01 0.01
+nEGroups = 1
+EGroups = 1
+###############################
+CFL = 0.8
+itmax = 1
+CalcTime = 15.0
+ConstDt = 1
+Kappa = 0.33333
+Limiter = Ceze
+FluxType = RoeE
+TimeMarching = RK3
+VelocityReference = 2.9580
+LengthReference = 0.5
+WriteFrequency = 0.5
+WriteEvery = 20
