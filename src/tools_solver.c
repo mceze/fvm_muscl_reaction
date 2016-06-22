@@ -310,8 +310,8 @@ int fvm_CompChemRHS(fvm_All *All)
   fvm_IO *IO;
   fvm_Data *Data;
   
-  fvm_Alloc((void **)&C, IO->nChemSpecies, sizeof(double));
-  fvm_Alloc((void **)&dY_dt, IO->nChemSpecies, sizeof(double));
+  fvm_Alloc((void **)&C, All->IO->nChemSpecies, sizeof(double));
+  fvm_Alloc((void **)&dY_dt, All->IO->nChemSpecies, sizeof(double));
   
   Mesh = All->Mesh;
   IO = All->IO;
